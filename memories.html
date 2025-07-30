@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaadein ❤️ | TEAM INFYNECT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for memories page */
+        .memory-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .friend-name {
+            color: #e91e63;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .memory-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .quote {
+            font-style: italic;
+            color: #673ab7;
+            margin: 15px 0;
+            padding-left: 15px;
+            border-left: 3px solid #673ab7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yaadein ❤️</h1>
+        <p class="subtitle">Dost wo nahi jo har waqt saath de, balki wo jo yaadon mein zinda rahe!</p>
+    </header>
+    <main>
+        <!-- Dynamic content based on current friend -->
+        <div id="memories-container">
+            <!-- Content will be inserted by JavaScript -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 TEAM INFYNECT | Har pal yaad aayega tumhara!</p>
+    </footer>
+    <script>
+        // Get current friend from localStorage
+        const currentFriend = localStorage.getItem("currentFriend") || "Dev";
+        const memoriesContainer = document.getElementById("memories-container");
+        
+        // Memories data for each friend
+        const memoriesData = {
+            "Dev": `
+                <div class="memory-card">
+                    <div class="friend-name">Bhalu (Dev) 💙</div>
+                    <div class="memory-text">
+                        <p>Or bhai remeber the library meet bc socha na tha shi me eke hi team me honge apn team leader sahab .</p>
+                        
+                        <div class="quote">"Dev ke saath dosti matlab... kabhi pyaar, kabhi jhagda, par kabhi boring nahi!"</div>
+                        
+                        <p>and bc uske bad utkarsh me star night ya dj night ya paper me g fatai sb me sath lol !! </p>
+                        
+                        <p>Tere saath ki sabse yaadgaar memory? will be forever apn zameen pe nanga nach 🐻❤️</p>
+                    </div>
+                </div>
+            `,
+            "Shubh": `
+                <div class="memory-card">
+                    <div class="friend-name">Kutti (Shubh) 🐶</div>
+                    <div class="memory-text">
+                        <p>Shubh tu ekdum se "Kutti" kyun ban gaya? Kyunki tu har baar mere liye bhaukta hai (literally)! 😆 Pr tu dost ni bhai h  .</p>
+                        tu
+                        <div class="quote">"Shubh ke saath ho toh har choti cheez bhi funny lagti hai! haina bhai "</div>
+                        
+                        <p>like college me nachna ho ya ladkiyo pe charcha tu hi sahara bc .</p>
+                        
+                        <p>and bc football zyada ni but lol legit days's 2lt wali bottle again ? 🤣</p>
+                        
+                        <p>mmm.. baki sath me gym akhir kb ayega vo din ben ke </p>
+                    </div>
+                </div>
+            `,
+            "Yashraj": `
+                <div class="memory-card">
+                    <div class="friend-name">Pillu (Yashraj) 🎤</div>
+                    <div class="memory-text">
+                        <p>Yaad hai wo pehla din jab college mein mile the? Tu itna sharma raha tha... Aaj teri awaaz sabse tej nikalti hai! 😝</p>
+                        
+                        <div class="quote">"Yashraj ki dosti matlab... gaana, masti aur unlimited pyaar!"</div>
+                        
+                        <p>Bhai who knows ki bs ek event me mlne ke bd se yaha tk phoch jainge ki hr jgeh sath mkcccc😢❤️</p>
+                        
+                        <p>And sath me guitar sikhne se leke bakchodi me pdhai tk divyanshi ki chodne tk hehe !!!</p>
+                        
+                        <p>Mana sbse bakchod h ap but stil apo chutiya ni h ap rand h hot fadfadau sala mc heheheh muskii dekho zara</p>
+                    </div>
+                </div>
+            `
+        };
+
+        // Insert memories based on current friend
+        memoriesContainer.innerHTML = memoriesData[currentFriend] || memoriesData["Dev"];
+
+        // Add back button
+        const backBtn = document.createElement("button");
+        backBtn.textContent = "← Wapas Jao";
+        backBtn.style.margin = "20px auto";
+        backBtn.style.display = "block";
+        backBtn.onclick = () => window.history.back();
+        memoriesContainer.after(backBtn);
+    </script>
+</body>
+</html>
